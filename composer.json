@@ -3,5 +3,8 @@
     "description": "first project",
     "type": "project",
     "license": "MIT",
+    "bin": [
+	    "bin/brain-games"
+    ],
     "require": {}
 }
