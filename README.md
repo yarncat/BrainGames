@@ -5,4 +5,4 @@
 
 See how it works!
 
-[Install package and start Even game](https://github.com/yarncat/php-project-lvl1/blob/master/examples/install%20and%20start%20even%20game.gif)
+[Install package and start Even game]()
