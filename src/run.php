@@ -18,7 +18,9 @@ function run($task, $answerArray)
         if ($answer == $rightAnswer) {
             line("Correct!\n");
         } else {
-            return line("'{$answer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'.\nLet's try again, %s!", $name);
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'.");
+			line("Let's try again, %s!", $name);
+			return;
         }
     }
     line("Congratulations, %s!", $name);
