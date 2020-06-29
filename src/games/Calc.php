@@ -6,7 +6,7 @@ function calculation()
 {
     $task = "What is the result of the expression?\n";
     $answerArray = [];
-    for ($i = 1; $i <= ATTEMPTS; $i++) {
+    for ($i = 1; $i <= ROUNDS; $i++) {
         $operand1 = rand(1, 100);
         $operand2 = rand(1, 100);
         $arrayOperators = ['+', '-', '*'];

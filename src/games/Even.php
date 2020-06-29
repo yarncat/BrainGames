@@ -11,7 +11,7 @@ function even()
 {
     $task = "Answer 'yes' if the number is even, otherwise answer 'no'.\n";
     $answerArray = [];
-    for ($i = 1; $i <= ATTEMPTS; $i++) {
+    for ($i = 1; $i <= ROUNDS; $i++) {
         $expression = rand(1, 1000);
         $result = isEven($expression) ? "yes" : "no";
         $answerArray[$i]['expression'] = $expression;
