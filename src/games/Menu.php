@@ -11,6 +11,7 @@ function mainMenu()
     'bin\brain-even' => 'brain-even',
     'bin\brain-calc' => 'brain-calc',
     'bin\brain-gcd' => 'brain-gcd',
+    'bin\brain-progression' => 'brain-progression',
     'quit' => 'Quit');
     while (true) {
         line('--------------------');

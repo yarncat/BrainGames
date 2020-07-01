@@ -7,7 +7,7 @@ const ROUNDS = 3;
 
 function run($task, $answerArray)
 {
-    line("Welcome to the Brain Game!\n");
+    line("\nWelcome to the Brain Game!\n");
     $name = prompt("May I have your name?");
     line("Hello, %s!\n", $name);
     line($task);
@@ -18,10 +18,10 @@ function run($task, $answerArray)
         if ($answer == $rightAnswer) {
             line("Correct!\n");
         } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'.");
-            line("Let's try again, %s!", $name);
+            line("\n'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $rightAnswer);
+            line("Let's try again, %s!\n", $name);
             return;
         }
     }
-    line("Congratulations, %s!", $name);
+    line("Congratulations, %s!\n", $name);
 }
