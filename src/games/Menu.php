@@ -12,11 +12,12 @@ function mainMenu()
     'bin\brain-calc' => 'brain-calc',
     'bin\brain-gcd' => 'brain-gcd',
     'bin\brain-progression' => 'brain-progression',
+    'bin\brain-prime' => 'brain-prime',
     'quit' => 'Quit');
     while (true) {
-        line('--------------------');
-        $choice = menu($menu, null, 'Choose any game');
-        line('--------------------');
+        line('-----------------------------');
+        $choice = menu($menu, null, 'Choose any game (or quit)');
+        line('-----------------------------');
         if ($choice == 'quit') {
             break;
         }
