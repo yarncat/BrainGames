@@ -9,4 +9,6 @@
 
 [Launch examples of Calc game](https://asciinema.org/a/jS1cV3oBRRQRsDZd0cEjgIHDK)  
 
-[Launch examples of Gcd game](https://asciinema.org/a/in0YIeU98vJrLOqoggK2gLVui)
+[Launch examples of Gcd game](https://asciinema.org/a/in0YIeU98vJrLOqoggK2gLVui)  
+
+[Launch examples of Progression game](https://asciinema.org/a/yiUTjCbzWVKypBWubd04f15xy)
