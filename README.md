@@ -11,4 +11,6 @@
 
 [Launch examples of Gcd game](https://asciinema.org/a/in0YIeU98vJrLOqoggK2gLVui)  
 
-[Launch examples of Progression game](https://asciinema.org/a/yiUTjCbzWVKypBWubd04f15xy)
+[Launch examples of Progression game](https://asciinema.org/a/yiUTjCbzWVKypBWubd04f15xy)  
+
+[Launch examples of Prime game](https://asciinema.org/a/UDhUV0Co9SacB73ddErdjd3OO)
