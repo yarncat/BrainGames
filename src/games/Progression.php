@@ -2,28 +2,28 @@
 
 namespace BrainGames\Progression;
 
-function arithmeticProgression($number1, $number2)
+function getArithmeticProgression($num, $diff)
 {
-    $array = [];
+    $arithmeticProgression = [];
     for ($i = 0; $i < 10; $i++) {
-        $number1 = $number1 + $number2;
-        $array[] = $number1;
+        $num = $num + $diff;
+        $arithmeticProgression[] = $num;
     }
-    return $array;
+    return $arithmeticProgression;
 }
 
-function progression()
+function getProgression()
 {
     $task = "What number is missing in the progression?\n";
     $answerArray = [];
     for ($i = 1; $i <= ROUNDS; $i++) {
-        $number1 = rand(1, 100);
-        $number2 = rand(1, 10);
-        $progressionArray = arithmeticProgression($number1, $number2);
-        $lostMemberIndex = array_rand($progressionArray);
-        $result = $progressionArray[$lostMemberIndex];
-        $progressionArray[$lostMemberIndex] = '..';
-        $expression = implode(' ', $progressionArray);
+        $number = rand(1, 100);
+        $difference = rand(1, 10);
+        $arithmeticProgression = getArithmeticProgression($number, $difference);
+        $lostNumberIndex = array_rand($arithmeticProgression);
+        $result = $arithmeticProgression[$lostNumberIndex];
+        $arithmeticProgression[$lostNumberIndex] = '..';
+        $expression = implode(' ', $arithmeticProgression);
         $answerArray[$i]['expression'] = $expression;
         $answerArray[$i]['result'] = $result;
     }

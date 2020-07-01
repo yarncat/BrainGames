@@ -7,7 +7,7 @@ function isEven($value)
     return $value % 2 === 0;
 }
 
-function even()
+function checkEven()
 {
     $task = "Answer 'yes' if the number is even, otherwise answer 'no'.\n";
     $answerArray = [];

@@ -2,7 +2,7 @@
 
 namespace BrainGames\Gcd;
 
-function calculateGcd($number1, $number2)
+function calculateGreatestCommonDivisor($number1, $number2)
 {
     if ($number1 % $number2 === 0) {
             $result = $number2;
@@ -15,7 +15,7 @@ function calculateGcd($number1, $number2)
     return $result;
 }
 
-function greatestCommonDivisor()
+function defineGreatestCommonDivisor()
 {
     $task = "Find the greatest common divisor of given numbers.\n";
     $answerArray = [];
@@ -23,7 +23,7 @@ function greatestCommonDivisor()
         $number1 = rand(1, 100);
         $number2 = rand(1, 100);
         $expression = "{$number1} {$number2}";
-        $result = calculateGcd($number1, $number2);
+        $result = calculateGreatestCommonDivisor($number1, $number2);
         $answerArray[$i]['expression'] = $expression;
         $answerArray[$i]['result'] = $result;
     }
