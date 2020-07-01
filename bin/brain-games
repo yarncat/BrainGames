@@ -10,6 +10,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use BrainGames\Cli;
+use function BrainGames\Menu\mainMenu;
 
-echo Cli\run();
+mainMenu();
