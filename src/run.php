@@ -1,27 +1,30 @@
 <?php
 
+namespace BrainGames\run;
+
 use function cli\line;
 use function cli\prompt;
 
-const ROUNDS = 3;
-
-function run($task, $answerArray)
+function run($task, $round)
 {
-    line("\nWelcome to the Brain Game!\n");
+    $newLine = "\n";
+    $maxNumberRound = 3;
+    line("%sWelcome to the Brain Game!%s", $newLine, $newLine);
     $name = prompt("May I have your name?");
-    line("Hello, %s!\n", $name);
-    line($task);
-    for ($i = 1; $i <= ROUNDS; $i++) {
-        line("Question: {$answerArray[$i]['expression']}");
-        $rightAnswer = $answerArray[$i]['result'];
+    line("Hello, %s!%s", $name, $newLine);
+    line("{$task}%s", $newLine);
+    for ($i = 1; $i <= $maxNumberRound; $i++) {
+        [$expression, $result] = $round();
+        line("Question: {$expression}");
+        $rightAnswer = $result;
         $answer = prompt("Your answer");
         if ($answer == $rightAnswer) {
-            line("Correct!\n");
+            line("Correct!%s", $newLine);
         } else {
-            line("\n'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $rightAnswer);
-            line("Let's try again, %s!\n", $name);
+            line("%s'%s' is wrong answer ;(. Correct answer was '%s'.", $newLine, $answer, $rightAnswer);
+            line("Let's try again, %s!%s", $name, $newLine);
             return;
         }
     }
-    line("Congratulations, %s!\n", $name);
+    line("Congratulations, %s!%s", $name, $newLine);
 }

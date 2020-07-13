@@ -2,6 +2,12 @@
     "name": "martines/brain-games",
     "description": "first project",
     "type": "project",
+    "authors": [
+        {
+            "name": "Alexandr Petrov",
+            "email": "yarncat@yandex.ru"
+        }
+    ],
     "license": "MIT",
     "bin": [
         "bin/brain-games",
@@ -16,7 +22,7 @@
     },
     "autoload": {
         "files": [
-            "src/games/Menu.php",
+            "src/menu.php",
             "src/games/Even.php",
             "src/games/Calc.php",
             "src/games/Gcd.php",

@@ -2,20 +2,21 @@
 
 namespace BrainGames\Even;
 
+use function BrainGames\run\run;
+
 function isEven($value)
 {
     return $value % 2 === 0;
 }
 
-function checkEven()
+function runGame()
 {
-    $task = "Answer 'yes' if the number is even, otherwise answer 'no'.\n";
-    $answerArray = [];
-    for ($i = 1; $i <= ROUNDS; $i++) {
+    $task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    $round = function () {
         $expression = rand(1, 1000);
         $result = isEven($expression) ? "yes" : "no";
-        $answerArray[$i]['expression'] = $expression;
-        $answerArray[$i]['result'] = $result;
-    }
-    run($task, $answerArray);
+        $expressionResult = [$expression, $result];
+        return $expressionResult;
+    };
+    run($task, $round);
 }

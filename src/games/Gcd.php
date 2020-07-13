@@ -2,6 +2,8 @@
 
 namespace BrainGames\Gcd;
 
+use function BrainGames\run\run;
+
 function calculateGreatestCommonDivisor($number1, $number2)
 {
     if ($number1 % $number2 === 0) {
@@ -15,17 +17,16 @@ function calculateGreatestCommonDivisor($number1, $number2)
     return $result;
 }
 
-function defineGreatestCommonDivisor()
+function runGame()
 {
-    $task = "Find the greatest common divisor of given numbers.\n";
-    $answerArray = [];
-    for ($i = 1; $i <= ROUNDS; $i++) {
+    $task = "Find the greatest common divisor of given numbers.";
+    $round = function () {
         $number1 = rand(1, 100);
         $number2 = rand(1, 100);
-        $expression = "{$number1} {$number2}";
+        $expression = $number1 . ' ' . $number2;
         $result = calculateGreatestCommonDivisor($number1, $number2);
-        $answerArray[$i]['expression'] = $expression;
-        $answerArray[$i]['result'] = $result;
-    }
-    run($task, $answerArray);
+        $expressionResult = [$expression, $result];
+        return $expressionResult;
+    };
+    run($task, $round);
 }

@@ -2,19 +2,31 @@
 
 namespace BrainGames\Calc;
 
-function makeCalculation()
+use function BrainGames\run\run;
+
+function makeCalculation($operand1, $operand2, $operator)
 {
-    $task = "What is the result of the expression?\n";
-    $answerArray = [];
-    for ($i = 1; $i <= ROUNDS; $i++) {
+    if ($operator === '+') {
+        return $operand1 + $operand2;
+    } elseif ($operator === '-') {
+        return $operand1 - $operand2;
+    } elseif ($operator === '*') {
+        return $operand1 * $operand2;
+    }
+}
+
+function runGame()
+{
+    $task = "What is the result of the expression?";
+    $round = function () {
         $operand1 = rand(1, 100);
         $operand2 = rand(1, 100);
         $operators = ['+', '-', '*'];
-        $operator = array_rand($operators);
-        $expression = $operand1 . $operators[$operator] . $operand2;
-        $result = eval('return ' . $expression . ';');
-        $answerArray[$i]['expression'] = $expression;
-        $answerArray[$i]['result'] = $result;
-    }
-    run($task, $answerArray);
+        $operator = $operators[array_rand($operators)];
+        $expression = $operand1 . $operator . $operand2;
+        $result = makeCalculation($operand1, $operand2, $operator);
+        $expressionResult = [$expression, $result];
+        return $expressionResult;
+    };
+    run($task, $round);
 }

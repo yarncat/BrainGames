@@ -2,30 +2,34 @@
 
 namespace BrainGames\Progression;
 
-function getArithmeticProgression($num, $diff)
+use function BrainGames\run\run;
+
+function getArithmeticProgression($firstNumberProgression, $difference)
 {
     $arithmeticProgression = [];
-    for ($i = 0; $i < 10; $i++) {
-        $num = $num + $diff;
-        $arithmeticProgression[] = $num;
+    $progressionLength = 10;
+    $arithmeticProgression[] = $firstNumberProgression;
+    $nextNumberProgression = $firstNumberProgression;
+    for ($i = 1; $i < $progressionLength; $i++) {
+        $nextNumberProgression = $nextNumberProgression + $difference;
+        $arithmeticProgression[] = $nextNumberProgression;
     }
     return $arithmeticProgression;
 }
 
-function getProgression()
+function runGame()
 {
-    $task = "What number is missing in the progression?\n";
-    $answerArray = [];
-    for ($i = 1; $i <= ROUNDS; $i++) {
-        $number = rand(1, 100);
+    $task = "What number is missing in the progression?";
+    $round = function () {
+        $firstNumberProgression = rand(1, 100);
         $difference = rand(1, 10);
-        $arithmeticProgression = getArithmeticProgression($number, $difference);
+        $arithmeticProgression = getArithmeticProgression($firstNumberProgression, $difference);
         $lostNumberIndex = array_rand($arithmeticProgression);
         $result = $arithmeticProgression[$lostNumberIndex];
         $arithmeticProgression[$lostNumberIndex] = '..';
         $expression = implode(' ', $arithmeticProgression);
-        $answerArray[$i]['expression'] = $expression;
-        $answerArray[$i]['result'] = $result;
-    }
-    run($task, $answerArray);
+        $expressionResult = [$expression, $result];
+        return $expressionResult;
+    };
+    run($task, $round);
 }
