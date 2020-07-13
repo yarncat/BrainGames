@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Menu;
+namespace BrainGames\menu;
 
 use function cli\line;
 use function cli\menu;
@@ -8,11 +8,11 @@ use function cli\menu;
 function mainMenu()
 {
     $menu = [
-        'bin\brain-even' => 'brain-even',
-        'bin\brain-calc' => 'brain-calc',
-        'bin\brain-gcd' => 'brain-gcd',
-        'bin\brain-progression' => 'brain-progression',
-        'bin\brain-prime' => 'brain-prime',
+        __DIR__ . '\..\bin\brain-even' => 'brain-even',
+        __DIR__ . '\..\bin\brain-calc' => 'brain-calc',
+        __DIR__ . '\..\bin\brain-gcd' => 'brain-gcd',
+        __DIR__ . '\..\bin\brain-progression' => 'brain-progression',
+        __DIR__ . '\..\bin\brain-prime' => 'brain-prime',
         'quit' => 'Quit'
     ];
     while (true) {

@@ -9,7 +9,7 @@ function run($task, $round)
 {
     $newLine = "\n";
     $maxNumberRound = 3;
-    line("%sWelcome to the Brain Game!%s", $newLine, $newLine);
+    line("%sWelcome to the Brain Games!%s", $newLine, $newLine);
     $name = prompt("May I have your name?");
     line("Hello, %s!%s", $name, $newLine);
     line("{$task}%s", $newLine);
