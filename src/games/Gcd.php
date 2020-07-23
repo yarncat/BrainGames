@@ -20,13 +20,13 @@ function calculateGreatestCommonDivisor($number1, $number2)
 function runGame()
 {
     $task = "Find the greatest common divisor of given numbers.";
-    $round = function () {
+    $generateGameData = function () {
         $number1 = rand(1, 100);
         $number2 = rand(1, 100);
         $expression = $number1 . ' ' . $number2;
         $result = calculateGreatestCommonDivisor($number1, $number2);
-        $expressionResult = [$expression, $result];
-        return $expressionResult;
+        $gameData = [$expression, $result];
+        return $gameData;
     };
-    run($task, $round);
+    run($task, $generateGameData);
 }

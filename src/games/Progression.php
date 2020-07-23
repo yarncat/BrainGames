@@ -8,11 +8,8 @@ function getArithmeticProgression($firstNumberProgression, $difference)
 {
     $arithmeticProgression = [];
     $progressionLength = 10;
-    $arithmeticProgression[] = $firstNumberProgression;
-    $nextNumberProgression = $firstNumberProgression;
-    for ($i = 1; $i < $progressionLength; $i++) {
-        $nextNumberProgression = $nextNumberProgression + $difference;
-        $arithmeticProgression[] = $nextNumberProgression;
+    for ($i = 0; $i < $progressionLength; $i++) {
+        $arithmeticProgression[] = $firstNumberProgression + $difference * $i;
     }
     return $arithmeticProgression;
 }
@@ -20,7 +17,7 @@ function getArithmeticProgression($firstNumberProgression, $difference)
 function runGame()
 {
     $task = "What number is missing in the progression?";
-    $round = function () {
+    $generateGameData = function () {
         $firstNumberProgression = rand(1, 100);
         $difference = rand(1, 10);
         $arithmeticProgression = getArithmeticProgression($firstNumberProgression, $difference);
@@ -28,8 +25,8 @@ function runGame()
         $result = $arithmeticProgression[$lostNumberIndex];
         $arithmeticProgression[$lostNumberIndex] = '..';
         $expression = implode(' ', $arithmeticProgression);
-        $expressionResult = [$expression, $result];
-        return $expressionResult;
+        $gameData = [$expression, $result];
+        return $gameData;
     };
-    run($task, $round);
+    run($task, $generateGameData);
 }

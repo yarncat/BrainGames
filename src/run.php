@@ -5,26 +5,33 @@ namespace BrainGames\run;
 use function cli\line;
 use function cli\prompt;
 
-function run($task, $round)
+function run($task, $generateGameData)
 {
-    $newLine = "\n";
     $maxNumberRound = 3;
-    line("%sWelcome to the Brain Games!%s", $newLine, $newLine);
+    line();
+    line("Welcome to the Brain Games!");
+    line();
     $name = prompt("May I have your name?");
-    line("Hello, %s!%s", $name, $newLine);
-    line("{$task}%s", $newLine);
+    line("Hello, %s!", $name);
+    line();
+    line("{$task}");
+    line();
     for ($i = 1; $i <= $maxNumberRound; $i++) {
-        [$expression, $result] = $round();
+        [$expression, $result] = $generateGameData();
         line("Question: {$expression}");
         $rightAnswer = $result;
         $answer = prompt("Your answer");
         if ($answer == $rightAnswer) {
-            line("Correct!%s", $newLine);
+            line("Correct!");
+            line();
         } else {
-            line("%s'%s' is wrong answer ;(. Correct answer was '%s'.", $newLine, $answer, $rightAnswer);
-            line("Let's try again, %s!%s", $name, $newLine);
+            line();
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $rightAnswer);
+            line("Let's try again, %s!", $name);
+            line();
             return;
         }
     }
-    line("Congratulations, %s!%s", $name, $newLine);
+    line("Congratulations, %s!", $name);
+    line();
 }
