@@ -28,10 +28,8 @@ function run($task, $generateGameData)
             line();
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $rightAnswer);
             line("Let's try again, %s!", $name);
-            line();
             return;
         }
     }
     line("Congratulations, %s!", $name);
-    line();
 }

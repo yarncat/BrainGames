@@ -20,7 +20,7 @@ function isPrime($number)
 
 function runGame()
 {
-    $task = "Answer 'yes' if given number is prime. Otherwise answer 'no'";
+    $task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     $generateGameData = function () {
         $expression = rand(1, 100);
         $result = isPrime($expression) ? "yes" : "no";
